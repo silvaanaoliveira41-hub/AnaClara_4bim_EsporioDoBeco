@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Criar Conta | Empório Mágico do Beco</title>
+
+    <link rel="stylesheet" href="cadastro.css">
+    <script src="cadastro.js" defer></script>
+</head>
+
+<body>
+    <main class="pagina-cadastro">
+        <section class="cartao-cadastro">
+
+            <header class="cabecalho-cadastro">
+                <div class="brasao" aria-hidden="true">✦</div>
+
+                <p class="subtitulo">ARTIGOS E OBJETOS MÁGICOS</p>
+
+                <h1>Empório Mágico do Beco</h1>
+
+                <p class="descricao">
+                    Crie sua conta e descubra um mundo de magia!
+                </p>
+            </header>
+
+            <form id="form-cadastro">
+
+                <div class="campo">
+                    <label for="nome">Nome completo</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Digite seu nome completo"
+                        minlength="5"
+                        maxlength="100"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="telefone">Número de telefone</label>
+                    <input
+                        type="tel"
+                        id="telefone"
+                        name="telefone"
+                        placeholder="(00) 00000-0000"
+                        maxlength="15"
+                        autocomplete="tel"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="exemplo@gmail.com"
+                        maxlength="100"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Criar senha</label>
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Mínimo de 8 caracteres"
+                        minlength="5"
+                        maxlength="72"
+                        autocomplete="new-password"
+                        required
+                    >
+                </div>
+
+                <p id="mensagem" role="status" aria-live="polite"></p>
+
+                <button type="submit" id="botao-cadastrar">
+                    Criar minha conta 
+                </button>
+
+            </form>
+
+           
+            <footer class="rodape-cadastro">
+                 <p>Pronto para começar sua jornada mágica?</p>
+                 <p>Crie sua conta e tenha acesso ao nosso mundo de magia!</p>
+            </footer>
+
+        </section>
+
+        <p class="frase-magica">
+            ✦ Onde a magia encontra você ✦
+        </p>
+
+    </main>
+</body>
+</html>

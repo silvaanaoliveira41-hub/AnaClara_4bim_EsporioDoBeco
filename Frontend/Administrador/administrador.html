@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administrador | Empório Mágico do Beco</title>
+
+    <link rel="stylesheet" href="administrador.css">
+    <script src="administrador.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Empório Mágico do Beco</h1>
+        <p>Painel do Administrador</p>
+        <button type="button" id="botao-sair-admin" style="margin-top:14px; background:#7045a0; color:#fff; border:1px solid #e2c078; padding:8px 18px; border-radius:8px; font-family:Georgia, serif; font-weight:bold; cursor:pointer;">
+            Sair da Conta
+        </button>
+    </header>
+
+    <main>
+
+        <section class="boas-vindas">
+            <h2>Bem-vindo ao Painel Administrativo!</h2>
+            <p>
+                Gerencie os produtos e acompanhe os pedidos
+                do Empório Mágico do Beco.
+            </p>
+        </section>
+
+        <section class="menu-administrador">
+
+            <a href="../produto/produto.html" class="opcao-menu">
+                <span class="icone">✦</span>
+                <h3>Gerenciar Produtos</h3>
+                <p>
+                    Cadastre, altere e exclua os produtos
+                    da loja.
+                </p>
+            </a>
+
+            <a href="../pedidos/pedidos.html" class="opcao-menu">
+                <span class="icone">✧</span>
+                <h3>Ver Pedidos</h3>
+                <p>
+                    Consulte os pedidos realizados
+                    pelos clientes.
+                </p>
+            </a>
+
+        </section>
+
+        <section class="produtos-cadastrados">
+            <h2>✧ Produtos Cadastrados ✧</h2>
+            <p class="descricao">
+                Confira os produtos que estão disponíveis
+                no Empório.
+            </p>
+
+            <div id="lista-produtos" class="produtos-container">
+                <p>Carregando produtos...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Empório Mágico do Beco</p>
+        <p>Painel Administrativo</p>
+    </footer>
+
+</body>
+</html>

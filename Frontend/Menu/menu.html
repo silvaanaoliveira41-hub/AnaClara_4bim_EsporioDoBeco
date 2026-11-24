@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Empório Mágico do Beco</title>
+
+    <link rel="stylesheet" href="menu.css">
+    <script src="menu.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <div class="marca">
+
+            <span class="brasao" aria-hidden="true"></span>
+
+            <div>
+                <h1>Empório Mágico do Beco</h1>
+                <p>Um mundo de magia espera por você</p>
+            </div>
+
+        </div>
+
+        <nav class="navegacao">
+
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+
+            <!-- ÁREA DA CONTA -->
+            <div class="area-conta" id="area-conta">
+
+                <!-- Aparece quando ninguém está conectado -->
+                <a href="../login/login.html"
+                   class="botao-login"
+                   id="botao-entrar">
+                    Entrar
+                </a>
+
+                <!-- Aparece quando existe um usuário conectado -->
+                <div class="usuario-logado" id="usuario-logado" hidden>
+
+                    <span id="nome-usuario"></span>
+
+                    <button type="button"
+                            id="botao-sair"
+                            class="botao-sair">
+                        Sair
+                    </button>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <!-- APRESENTAÇÃO DA LOJA -->
+        <section class="boas-vindas" id="inicio">
+
+            <div class="texto-boas-vindas">
+
+                <p class="sobretitulo">
+                    BEM-VINDO AO MUNDO DA MAGIA
+                </p>
+
+                <h2>
+                    Descubra um universo
+                    <span>encantado!</span>
+                </h2>
+
+                <p class="descricao-boas-vindas">
+                    No Empório Mágico do Beco você encontra
+                    produtos especiais para tornar seu mundo
+                    muito mais mágico.
+                </p>
+
+                <a href="#produtos" class="botao-explorar">
+                    Explorar produtos
+                </a>
+
+            </div>
+
+            <div class="imagem-boas-vindas">
+
+                <img src="logo-emporio.png"
+                     alt="Logo do Empório Mágico">
+
+            </div>
+
+        </section>
+
+
+        <!-- CATÁLOGO DE PRODUTOS -->
+        <section class="secao-produtos" id="produtos">
+
+            <div class="titulo-secao">
+
+                <p class="sobretitulo">NOSSO EMPÓRIO</p>
+
+                <h2>Produtos Mágicos</h2>
+
+                <p>
+                    Confira os produtos disponíveis em nossa loja.
+                </p>
+
+            </div>
+
+            <!-- OS PRODUTOS SERÃO CARREGADOS PELO JAVASCRIPT -->
+            <div class="lista-produtos" id="lista-produtos">
+
+                <p class="mensagem-carregamento">
+                    Carregando produtos mágicos...
+                </p>
+
+            </div>
+
+            <!-- MENSAGEM DE ERRO OU STATUS -->
+            <p id="mensagem-status"
+               role="status"
+               aria-live="polite">
+            </p>
+
+        </section>
+
+
+        <!-- CHAMADA PARA LOGIN -->
+        <section class="mensagem-magica" id="mensagem-magica">
+
+            <span class="icone-magico" aria-hidden="true"></span>
+
+            <h2>Faça parte desse mundo mágico!</h2>
+
+            <p>
+                Entre na sua conta e prepare-se para
+                descobrir tudo o que nosso empório oferece.
+            </p>
+
+            <a href="../login/login.html" class="botao-login-final">
+                Entrar na minha conta
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <p>
+            Empório Mágico do Beco
+        </p>
+
+        <span>
+            Onde a magia acontece!
+        </span>
+
+    </footer>
+
+</body>
+</html>

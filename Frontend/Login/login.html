@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Empório Mágico do Beco</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js" defer></script>
+</head>
+
+<body>
+
+    <main class="pagina-login">
+
+        <div class="decoracao">
+            <span>✦</span>
+            <span>✧</span>
+            <span>✦</span>
+            <span>✧</span>
+            <span>✦</span>
+        </div>
+
+        <section class="painel-login">
+
+            <div class="marca">
+                <span class="brasao">✦</span>
+                <h1>Empório Mágico do Beco</h1>
+                <p>Doces & Artefatos Encantados</p>
+            </div>
+
+            <div class="conteudo-login">
+
+                <p class="sobretitulo">ACESSO AO EMPÓRIO</p>
+                <h2>Entrar na Conta</h2>
+                <p class="descricao">
+                    Informe seu e-mail e sua senha mágica para continuar.
+                </p>
+
+                <form id="form-login">
+
+                    <div class="grupo-campo">
+                        <label for="email">E-mail</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Digite seu e-mail"
+                            required
+                        >
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="senha">Senha</label>
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            placeholder="Digite sua senha"
+                            required
+                        >
+                    </div>
+
+                    <p id="mensagem" class="mensagem"></p>
+
+                    <button type="submit" id="botao-entrar">
+                        Entrar
+                    </button>
+
+                </form>
+
+                <div class="link-cadastro">
+                    <p>Ainda não possui uma conta no Empório?</p>
+                    <a href="../cadastro/cadastro.html">Criar conta mágica</a>
+                </div>
+
+                <a href="../menu/menu.html" class="voltar-loja">
+                    ← Voltar para a loja
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

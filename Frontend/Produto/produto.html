@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produtos | Empório Mágico do Beco</title>
+
+    <link rel="stylesheet" href="produto.css">
+    <script src="produto.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Empório Mágico do Beco</h1>
+        <p>Gerenciamento dos Produtos</p>
+    </header>
+
+    <main>
+
+        <section class="cadastro">
+
+            <h2 id="titulo-formulario">Cadastrar Produto</h2>
+
+            <form id="produtoForm">
+
+                <input type="hidden" id="id_produto">
+
+                <div class="campo">
+                    <label for="nome_produto">Nome do Produto:</label>
+                    <input
+                        type="text"
+                        id="nome_produto"
+                        placeholder="Digite o nome do produto"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="categoria">Categoria:</label>
+                    <select id="categoria" required>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="Varinhas">Varinhas</option>
+                        <option value="Caldeirões">Caldeirões</option>
+                        <option value="Vassouras">Vassouras</option>
+                        <option value="Poções & Ingredientes">Poções & Ingredientes</option>
+                        <option value="Livros & Pergaminhos">Livros & Pergaminhos</option>
+                        <option value="Artefatos das Trevas">Artefatos das Trevas</option>
+                        <option value="Objetos Diversos">Objetos Diversos</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="descricao">Descrição:</label>
+                    <textarea
+                        id="descricao"
+                        placeholder="Descreva o produto"
+                    ></textarea>
+                </div>
+
+                <div class="campo">
+                    <label for="imagem">Imagem do Produto:</label>
+                    <input
+                        type="file"
+                        id="imagem"
+                        accept="image/*"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="preco_unitario_produto">Preço (Galeões):</label>
+                    <input
+                        type="number"
+                        id="preco_unitario_produto"
+                        placeholder="Digite o preço"
+                        min="0"
+                        step="0.01"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="quantidade_estoque_produto">Quantidade em Estoque:</label>
+                    <input
+                        type="number"
+                        id="quantidade_estoque_produto"
+                        placeholder="Digite a quantidade"
+                        min="0"
+                        step="1"
+                        required
+                    >
+                </div>
+
+                <div class="botoes">
+
+                    <button type="submit" id="botao-salvar">
+                        Cadastrar Produto
+                    </button>
+
+                    <button
+                        type="button"
+                        id="botao-cancelar"
+                        onclick="limparFormulario()"
+                    >
+                        Cancelar
+                    </button>
+
+                </div>
+
+                <p id="mensagem"></p>
+
+            </form>
+
+        </section>
+
+        <section class="vitrine">
+
+            <h2>Produtos da Loja</h2>
+
+            <div class="busca">
+                <input
+                    type="text"
+                    id="buscar"
+                    placeholder="Pesquisar produto..."
+                    oninput="filtrarProdutos()"
+                >
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Imagem</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Estoque</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabela-produtos">
+                    <tr>
+                        <td colspan="6">Carregando produtos...</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="voltar-menu">
+                <a href="../administrador/administrador.html">
+                    Voltar ao Painel do Administrador
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Empório Mágico do Beco</p>
+    </footer>
+
+</body>
+</html>

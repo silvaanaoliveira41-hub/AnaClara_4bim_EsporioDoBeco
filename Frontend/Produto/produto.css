@@ -1,0 +1,359 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo: #10091c;
+    --painel: #211333;
+    --roxo: #7045a0;
+    --roxo-hover: #875bb8;
+    --lilas: #c6a7ff;
+    --dourado: #e2c078;
+    --dourado-claro: #ffe7a8;
+    --texto: #faf5ff;
+    --texto-suave: #d0c2e3;
+    --borda: #543b70;
+    --vermelho: #a83c54;
+    --vermelho-hover: #c34b64;
+}
+
+body {
+    font-family: Georgia, serif;
+    background:
+        radial-gradient(circle at 85% 50%, #42265d 0%, transparent 40%),
+        radial-gradient(circle at 10% 20%, #302044 0%, transparent 35%),
+        var(--fundo);
+    color: var(--texto);
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Fundo com pequenas estrelas */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background-image:
+        radial-gradient(2px 2px at 10% 15%, #ffe7a8 99%, transparent),
+        radial-gradient(2px 2px at 25% 75%, #c6a7ff 99%, transparent),
+        radial-gradient(1px 1px at 40% 35%, #ffffff 99%, transparent),
+        radial-gradient(2px 2px at 55% 85%, #ffe7a8 99%, transparent),
+        radial-gradient(1px 1px at 70% 20%, #c6a7ff 99%, transparent),
+        radial-gradient(2px 2px at 85% 65%, #ffffff 99%, transparent),
+        radial-gradient(1px 1px at 95% 35%, #ffe7a8 99%, transparent),
+        radial-gradient(2px 2px at 15% 90%, #c6a7ff 99%, transparent),
+        radial-gradient(1px 1px at 65% 50%, #ffe7a8 99%, transparent),
+        radial-gradient(2px 2px at 35% 10%, #ffffff 99%, transparent);
+
+    background-size: 100% 100%;
+    animation: brilho-estrelas 4s ease-in-out infinite alternate;
+}
+
+/* Animação suave das estrelas */
+@keyframes brilho-estrelas {
+    from {
+        opacity: 0.35;
+    }
+
+    to {
+        opacity: 0.9;
+    }
+}
+
+/* Mantém o conteúdo acima das estrelas */
+header,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    background-color: var(--painel);
+    border-bottom: 2px solid var(--dourado);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--dourado-claro);
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: var(--lilas);
+    font-size: 17px;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+.painel,
+.lista-produtos {
+    background-color: var(--painel);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: var(--dourado-claro);
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 23px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.campo label {
+    color: var(--lilas);
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.campo input {
+    padding: 12px;
+    border: 1px solid var(--borda);
+    border-radius: 7px;
+    background-color: #170e24;
+    color: var(--texto);
+    font-family: Georgia, serif;
+    font-size: 15px;
+    outline: none;
+}
+
+.campo input:focus {
+    border-color: var(--dourado);
+    box-shadow: 0 0 5px rgba(226, 192, 120, 0.4);
+}
+
+.campo input::placeholder {
+    color: #9685aa;
+}
+
+.campo small {
+    color: var(--texto-suave);
+    margin-top: 7px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+button {
+    border: none;
+    border-radius: 7px;
+    padding: 11px 20px;
+    cursor: pointer;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#botao-salvar {
+    background-color: var(--roxo);
+    color: white;
+}
+
+#botao-salvar:hover {
+    background-color: var(--roxo-hover);
+}
+
+#botao-cancelar {
+    background-color: #493657;
+    color: var(--texto);
+}
+
+#botao-cancelar:hover {
+    background-color: #60456e;
+}
+
+#mensagem {
+    text-align: center;
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+.sucesso {
+    color: #8ee0a3;
+}
+
+.erro {
+    color: #ff9292;
+}
+
+/* Barra de pesquisa dos produtos */
+.busca {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 35px;
+}
+
+.busca input {
+    width: 100%;
+    height: 55px;
+    padding: 15px 22px;
+    border: 2px solid var(--borda);
+    border-radius: 12px;
+    background-color: var(--painel);
+    color: var(--texto);
+    font-family: Georgia, serif;
+    font-size: 18px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.busca input:focus {
+    border-color: var(--dourado);
+    box-shadow: 0 0 12px rgba(226, 192, 120, 0.3);
+}
+
+.busca input::placeholder {
+    color: var(--texto-suave);
+}
+
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+thead {
+    background-color: #38234e;
+}
+
+th {
+    color: var(--dourado-claro);
+    padding: 15px 10px;
+}
+
+td {
+    padding: 13px 10px;
+    text-align: center;
+    border-bottom: 1px solid var(--borda);
+    color: var(--texto-suave);
+}
+
+tbody tr:hover {
+    background-color: #30203f;
+}
+
+.imagem-produto {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.acoes {
+    white-space: nowrap;
+}
+
+.editar {
+    background-color: var(--roxo);
+    color: white;
+    margin: 3px;
+}
+
+.editar:hover {
+    background-color: var(--roxo-hover);
+}
+
+.excluir {
+    background-color: var(--vermelho);
+    color: white;
+    margin: 3px;
+}
+
+.excluir:hover {
+    background-color: var(--vermelho-hover);
+}
+
+footer {
+    background-color: var(--painel);
+    border-top: 1px solid var(--borda);
+    padding: 20px;
+    text-align: center;
+    color: var(--texto-suave);
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    main {
+        width: 95%;
+    }
+
+    .painel,
+    .lista-produtos {
+        padding: 15px;
+    }
+
+    .botoes {
+        flex-direction: column;
+    }
+
+    .botoes button {
+        width: 100%;
+    }
+
+    .busca {
+        max-width: 100%;
+    }
+
+    .busca input {
+        font-size: 16px;
+    }
+}
+
+
+.voltar-menu {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.voltar-menu a {
+    display: inline-block;
+    color: var(--dourado-claro);
+    text-decoration: none;
+    border: 1px solid var(--dourado);
+    border-radius: 8px;
+    padding: 12px 20px;
+    transition: 0.3s;
+    font-family: Georgia, serif;
+}
+
+.voltar-menu a:hover {
+    background-color: var(--roxo);
+    color: white;
+}

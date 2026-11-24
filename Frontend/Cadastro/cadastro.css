@@ -1,0 +1,384 @@
+/* Cores utilizadas no site */
+:root {
+    --fundo: #10091c;
+    --painel: #211333;
+    --roxo: #7045a0;
+    --roxo-hover: #895bb5;
+    --lilas: #c6a7ff;
+    --dourado: #e2c078;
+    --dourado-claro: #ffe7a8;
+    --texto: #faf5ff;
+    --texto-suave: #d0c2e3;
+    --borda: #543b70;
+}
+
+/* Remove as margens e os espaçamentos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Aparência geral da página */
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--texto);
+
+    /* Cria um fundo com tons de roxo e efeitos de luz */
+    background:
+        radial-gradient(
+            ellipse at 15% 10%,
+            rgba(112, 69, 160, 0.35),
+            transparent 40%
+        ),
+        radial-gradient(
+            ellipse at 85% 75%,
+            rgba(150, 92, 220, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #1b102b,
+            #10091c 55%,
+            #080510
+        );
+
+    position: relative;
+    isolation: isolate;
+}
+
+/* Cria pequenas estrelas decorativas no fundo */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(2px 2px at 10% 20%, #fff4c7 99%, transparent),
+        radial-gradient(1px 1px at 25% 75%, #ffffff 99%, transparent),
+        radial-gradient(2px 2px at 42% 35%, #d8baff 99%, transparent),
+        radial-gradient(1px 1px at 65% 15%, #ffffff 99%, transparent),
+        radial-gradient(2px 2px at 80% 65%, #ffe7a8 99%, transparent),
+        radial-gradient(1px 1px at 92% 40%, #d8baff 99%, transparent);
+
+    background-size:
+        320px 280px,
+        260px 300px,
+        380px 340px,
+        300px 260px,
+        350px 320px,
+        280px 300px;
+
+    opacity: 0.65;
+}
+
+/* Centraliza o cadastro na tela */
+.pagina-cadastro {
+    position: relative;
+    z-index: 1;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 22px;
+    padding: 35px 18px;
+}
+
+/* Cartão principal do cadastro */
+.cartao-cadastro {
+    width: 100%;
+    max-width: 480px;
+    padding: 35px;
+
+    /* Fundo escuro com leve transparência */
+    background: linear-gradient(
+        145deg,
+        rgba(40, 24, 60, 0.97),
+        rgba(20, 11, 32, 0.98)
+    );
+
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+
+    /* Sombra para destacar o cartão do fundo */
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(198, 167, 255, 0.08);
+
+    animation: aparecer 0.7s ease both;
+}
+
+/* Organiza o cabeçalho da página */
+.cabecalho-cadastro {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+/* Símbolo mágico no topo do formulário */
+.brasao {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 18px;
+
+    border: 2px solid var(--dourado);
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #4d2877,
+        #1a0d2b
+    );
+
+    color: var(--dourado-claro);
+    font-size: 32px;
+
+    box-shadow:
+        0 0 15px rgba(226, 192, 120, 0.22),
+        0 0 25px rgba(198, 167, 255, 0.12);
+}
+
+/* Texto pequeno acima do título */
+.subtitulo {
+    color: var(--dourado);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 1.6;
+}
+
+/* Nome da loja */
+.cabecalho-cadastro h1 {
+    margin: 9px 0;
+
+    color: var(--dourado-claro);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    line-height: 1.25;
+
+    text-shadow: 0 0 15px rgba(226, 192, 120, 0.2);
+}
+
+/* Texto abaixo do título */
+.descricao {
+    color: var(--texto-suave);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Organiza cada campo do formulário */
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin-bottom: 18px;
+}
+
+/* Estilo dos nomes dos campos */
+.campo label {
+    color: var(--texto-suave);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Aparência dos campos de texto */
+.campo input {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+
+    background: rgba(12, 7, 21, 0.85);
+    color: var(--texto);
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+/* Cor do texto de exemplo dentro dos campos */
+.campo input::placeholder {
+    color: #9685ad;
+}
+
+/* Destaca o campo que está sendo preenchido */
+.campo input:focus {
+    border-color: var(--lilas);
+    background: rgba(20, 12, 32, 0.98);
+
+    box-shadow:
+        0 0 0 3px rgba(198, 167, 255, 0.12),
+        0 0 12px rgba(198, 167, 255, 0.08);
+}
+
+/* Área destinada às mensagens de erro ou sucesso */
+#mensagem {
+    min-height: 20px;
+    margin: 2px 0 12px;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Cor das mensagens de erro */
+#mensagem.erro {
+    color: #ff9aab;
+}
+
+/* Cor das mensagens de sucesso */
+#mensagem.sucesso {
+    color: #b8f3c8;
+}
+
+/* Botão principal para criar a conta */
+#botao-cadastrar {
+    width: 100%;
+    min-height: 48px;
+    padding: 13px 18px;
+
+    border: 1px solid var(--dourado);
+    border-radius: 9px;
+
+    background: linear-gradient(
+        135deg,
+        #8b61b8,
+        #5a347f
+    );
+
+    color: #fff8e8;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        opacity 0.25s ease;
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+#botao-cadastrar:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    background: linear-gradient(
+        135deg,
+        #9a72c5,
+        #7045a0
+    );
+
+    box-shadow:
+        0 0 18px rgba(198, 167, 255, 0.2),
+        0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Aparência do botão enquanto o cadastro está acontecendo */
+#botao-cadastrar:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+/* Rodapé com mensagem de boas-vindas */
+.rodape-cadastro {
+    margin-top: 25px;
+    padding-top: 20px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(84, 59, 112, 0.65);
+}
+
+/* Texto do rodapé */
+.rodape-cadastro p {
+    margin-bottom: 8px;
+
+    color: var(--texto-suave);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Destaque para a frase decorativa */
+.rodape-cadastro p:first-child {
+    color: var(--dourado-claro);
+    font-weight: 600;
+}
+
+/* Frase mágica abaixo do cartão */
+.frase-magica {
+    color: var(--texto-suave);
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Animação suave de entrada do cartão */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajustes para celulares */
+@media (max-width: 500px) {
+    .pagina-cadastro {
+        padding: 20px 12px;
+        gap: 16px;
+    }
+
+    .cartao-cadastro {
+        padding: 25px 20px;
+    }
+
+    .cabecalho-cadastro h1 {
+        font-size: 28px;
+    }
+
+    .subtitulo {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .frase-magica {
+        font-size: 11px;
+    }
+}
+
+/* Respeita a preferência do usuário por menos animações */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
