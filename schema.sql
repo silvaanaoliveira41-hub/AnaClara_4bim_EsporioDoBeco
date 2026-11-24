@@ -166,3 +166,26 @@ UPDATE public.usuarios
 SET tipo_usuario = 'administrador'
 WHERE LOWER(email) = LOWER('anaoliveira.2025@alunos.utfpr.edu.br')
 RETURNING id, nome, email, tipo_usuario;
+
+ALTER TABLE usuarios
+ADD COLUMN IF NOT EXISTS reset_token VARCHAR(255),
+ADD COLUMN IF NOT EXISTS reset_expira TIMESTAMP;
+
+CREATE TABLE IF NOT EXISTS pedidos (
+    id SERIAL PRIMARY KEY,
+    usuario_id INTEGER REFERENCES usuarios(id),
+    nome_cliente VARCHAR(150),
+    email_cliente VARCHAR(150),
+    valor_total NUMERIC(10, 2) NOT NULL DEFAULT 0,
+    status VARCHAR(50) NOT NULL DEFAULT 'Pendente',
+    data_pedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS itens_pedido (
+    id SERIAL PRIMARY KEY,
+    pedido_id INTEGER REFERENCES pedidos(id) ON DELETE CASCADE,
+    produto_id INTEGER REFERENCES produtos_magicos(id),
+    nome_produto VARCHAR(150),
+    quantidade INTEGER NOT NULL,
+    preco_unitario NUMERIC(10, 2) NOT NULL
+);
